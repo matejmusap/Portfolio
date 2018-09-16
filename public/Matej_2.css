@@ -1,0 +1,115 @@
+body {
+background: #5A3F37;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C7744, #5A3F37);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C7744, #5A3F37); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+p {
+	padding: 10%;
+	font-family: 'Mukta Malar', sans-serif;
+	font-size: 1.2rem;
+}
+
+.navbar{
+	height: 30px;
+}
+
+.ia-container {
+	width: 685px;
+	height: 500px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+.ia-container figure {
+    position: absolute;
+	top: 0;
+	width: 335px;
+	height: 500px;
+	left: 50px; /* width of visible piece */
+    transition: all 0.3s ease-in-out;
+}
+
+.ia-container > figure {
+    position: relative;
+	left: 0 !important;
+}
+
+.ia-container img {
+	height: 500px;
+	display: block;
+	width: 100%;
+}
+
+.ia-container input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px; /* just cover visible part */
+	height: 100%;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+    opacity: 0;
+	z-index: 100;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.ia-container input:checked{
+	width: 5px;
+	left: auto;
+	right: 0px;
+}
+.ia-container input:checked ~ figure {
+    left: 335px;
+    transition: all 0.7s ease-in-out;
+}
+
+.ia-container input:checked ~ figure input{
+    z-index: 1;
+}
+
+@media screen and (max-width: 720px) {
+    .ia-container { 
+		width: 540px; 
+	}
+	
+	.ia-container figure { 
+		left: 40px; 
+		width: 260px; 
+	}
+	
+	.ia-container input { 
+		width: 40px; 
+	}
+	
+	.ia-container input:checked ~ figure { 
+		left: 260px; 
+	}
+}
+
+@media screen and (max-width: 520px) {
+    .ia-container { 
+		width: 320px; 
+	}
+	
+	.ia-container figure { 
+		left: 20px; 
+		width: 180px; 
+	}
+	
+	.ia-container input { 
+		width: 20px; 
+	}
+	
+	.ia-container input:checked ~ figure { 
+		left: 180px; 
+	}
+
+}
+
+
+
+
